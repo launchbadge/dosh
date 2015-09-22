@@ -1,0 +1,19 @@
+{
+  "name": "payment",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/launchbadge/payment.js.git"
+  },
+  "author": "LaunchBadge <contact@launchbadge.com>",
+  "bugs": {
+    "url": "https://github.com/launchbadge/payment.js/issues"
+  },
+  "homepage": "https://github.com/launchbadge/payment.js#readme",
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}
