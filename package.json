@@ -15,5 +15,10 @@
   "homepage": "https://github.com/launchbadge/payment.js#readme",
   "dependencies": {
     "lodash": "^3.10.1"
+  },
+  "scripts": {
+    "test": "gulp",
+    "lint": "gulp lint",
+    "prepublish": "gulp build"
   }
 }
