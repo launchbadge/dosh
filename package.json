@@ -2,7 +2,7 @@
   "name": "payment",
   "version": "0.1.0",
   "description": "",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "private": true,
   "repository": {
     "type": "git",
@@ -15,10 +15,5 @@
   "homepage": "https://github.com/launchbadge/payment.js#readme",
   "dependencies": {
     "lodash": "^3.10.1"
-  },
-  "scripts": {
-    "test": "gulp",
-    "lint": "gulp lint",
-    "prepublish": "gulp build"
   }
 }
