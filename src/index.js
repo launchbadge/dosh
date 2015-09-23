@@ -5,7 +5,8 @@ export default {
   validateNumber,
   validateCVC,
   validateExpiryYear,
-  validateExpiryMonth
+  validateExpiryMonth,
+  formatNumber
 }
 
 // Listing of payment cards and their specifications taken from (MIT):
@@ -32,6 +33,7 @@ const cards = [
   }, {
     type: "dankort",
     pattern: /^5019/,
+    length: [16],
     cvcLength: [3],
     luhn: true
   }, {
@@ -118,7 +120,7 @@ function luhn(number) {
 
 export function cleanNumber(text) {
   // Remove all extra characters from the string
-  return ("" + text).replace(/[\. ,:-]+/g, "")
+  return ("" + text).replace(/\D/g, "")
 }
 
 export function validateNumber(number) {
@@ -141,7 +143,7 @@ export function validateNumber(number) {
   }
 
   // Everything seems to check out return the card type
-  return card.type
+  return card
 }
 
 export function validateCVC(cvc, type) {
@@ -181,4 +183,16 @@ export function validateExpiryMonth(year, month) {
   }
 
   return true
+}
+
+export function formatNumber(value) {
+  let text = cleanNumber(value)
+  let card = match(text)
+
+  // 16-digit cards can be easily formatted
+  if (card != null && card.length.indexOf(16) >= 0 && text.length <= 16) {
+    text = text.replace(/(\d{4})/g, "$1 ").trim()
+  }
+
+  return text
 }

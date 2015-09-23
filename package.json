@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/launchbadge/dosh#readme",
   "dependencies": {
+    "babel-runtime": "^5.8.25",
     "lodash": "^3.10.1"
   },
   "scripts": {
