@@ -6,7 +6,8 @@ export default {
   validateCVC,
   validateExpiryYear,
   validateExpiryMonth,
-  formatNumber
+  formatNumber,
+  match
 }
 
 // Listing of payment cards and their specifications taken from (MIT):
@@ -82,9 +83,9 @@ const cards = [
 ]
 
 // Guess the card type from the given card number
-function match(number) {
+export function match(number) {
   // Strip any non-digit characters
-  number = (number + "").replace(/\D/g, "")
+  number = cleanNumber(number)
 
   // Iterate through each card type schema
   for (let card of cards) {
